@@ -64,13 +64,11 @@ class _MyAppState extends State<MyApp> {
             itemCount: _messages.length,
             itemBuilder: (BuildContext context, int i) {
               var message = _messages[i];
-              if ('${message.body}' == 'instagram') {
-                if('${message.body}' == 'instagram.com.xyz'){
+              final text = message.body;
+                if(text.contains("a")){
                   notify();
                 }
-              }else {
 
-              }
               return ListTile(
                 title: Text('${message.sender} [${message.date}]'),
                 subtitle: Text('${message.body}'),
@@ -91,7 +89,6 @@ class _MyAppState extends State<MyApp> {
                 count: 10,
               );
               debugPrint('sms inbox messages: ${messages.length}');
-              notify();
               setState(() => _messages = messages);
             } else {
               await Permission.sms.request();
