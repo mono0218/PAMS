@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:mongo_dart/mongo_dart.dart'hide State;
+import 'package:pamssms/mongo_read.dart';
+import 'dart:developer';
 
 
-void main() {
+void main(List<String> arguments)async {
   runApp(const MyApp());
 }
-
-
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -70,6 +71,7 @@ class _MyAppState extends State<MyApp> {
   }
 
 
+
   @override
   void initState() {
     super.initState();
@@ -89,11 +91,19 @@ class _MyAppState extends State<MyApp> {
             itemBuilder: (BuildContext context, int i) {
               var message = _messages[i];
               final text = message.body;
+
+              Level4db();
+
+              var levels4 = ["a" , "z"];
+              var levels3 = ["a" , "z"];
+              var levels2 = ["a" , "z"];
+              var levels1 = ["a" , "z"];
+
               //mongo-db list
-              List level4 = ["a"];
-              List level3 = ["b"];
-              List level2 = ["c"];
-              List level1 = ["d"];
+              List level4 = levels4;
+              List level3 = levels3;
+              List level2 = levels2;
+              List level1 = levels1;
 
                 //level4
               for (var item4 in level4){
@@ -132,6 +142,7 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
+            Level4db();
             final FlutterLocalNotificationsPlugin  flutterLocalNotificationsPlugin =
             FlutterLocalNotificationsPlugin();
 
