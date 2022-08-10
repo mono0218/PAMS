@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:mongo_dart/mongo_dart.dart' show Db, DbCollection;
+
 
 void main() {
   runApp(const MyApp());
@@ -68,6 +70,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+
   @override
   void initState() {
     super.initState();
@@ -87,21 +90,37 @@ class _MyAppState extends State<MyApp> {
             itemBuilder: (BuildContext context, int i) {
               var message = _messages[i];
               final text = message.body;
-              if(text!.contains("4")){
-                notify();
-              }else{
-                if(text.contains("3")){
+              //mongo-db list
+              List level4 = ["a"];
+              List level3 = ["b"];
+              List level2 = ["c"];
+              List level1 = ["d"];
 
-                }else{
-                  if(text.contains("2")){
+                //level4
+              for (var item4 in level4){
+                if(text!.contains(item4)){
+                  notify();
+                }
+              }
 
-                  }else{
-                    if(text.contains("1")){
+                //level3
+              for (var item3 in level3){
+                if(text!.contains(item3)){
+                  notify();
+                }
+              }
 
-                    }else{
-                      safety();
-                   }
-                  }
+                //level2
+              for (var item2 in level2){
+                if(text!.contains(item2)) {
+                  notify();
+                }
+              }
+
+                //level1
+              for (var item1 in level1){
+                if(text!.contains(item1)){
+                  notify();
                 }
               }
 
@@ -121,7 +140,6 @@ class _MyAppState extends State<MyApp> {
             if (permission.isGranted) {
               final messages = await _query.querySms(
                 kinds: [SmsQueryKind.inbox, SmsQueryKind.sent],
-                // address: '+254712345789',
                 count: 10,
               );
               debugPrint('sms inbox messages: ${messages.length}');
@@ -130,6 +148,7 @@ class _MyAppState extends State<MyApp> {
               await Permission.sms.request();
             }
           },
+
           child: const Icon(Icons.refresh),
         ),
       ),
