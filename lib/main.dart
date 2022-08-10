@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:mongo_dart/mongo_dart.dart' show Db, DbCollection;
 
 
 void main() {
@@ -99,28 +98,28 @@ class _MyAppState extends State<MyApp> {
                 //level4
               for (var item4 in level4){
                 if(text!.contains(item4)){
-                  notify();
+                  debugPrint('a');
                 }
               }
 
                 //level3
               for (var item3 in level3){
                 if(text!.contains(item3)){
-                  notify();
+                  debugPrint('b');
                 }
               }
 
                 //level2
               for (var item2 in level2){
                 if(text!.contains(item2)) {
-                  notify();
+                  debugPrint('c');
                 }
               }
 
                 //level1
               for (var item1 in level1){
                 if(text!.contains(item1)){
-                  notify();
+                  debugPrint('d');
                 }
               }
 

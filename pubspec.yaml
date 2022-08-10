@@ -39,8 +39,6 @@ dependencies:
   flutter_local_notifications: ^9.6.1
   flutter_native_timezone: ^2.0.0
   flutter_app_badger: ^1.4.0
-  realm: ^0.1.0+preview
-  mongo_dart: ^0.7.4+1
 
 dev_dependencies:
   flutter_test:
