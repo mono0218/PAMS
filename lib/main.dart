@@ -46,6 +46,28 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  safety() {
+    final flnp = FlutterLocalNotificationsPlugin();
+    return flnp.initialize(
+      const InitializationSettings(
+        android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+      ),
+    ).then(
+      // 通知の表示
+          (_) => flnp.show(
+        0,
+        'PAMSからのお知らせ',
+        '現在受信したsmsは安全です',
+        const NotificationDetails(
+          android: AndroidNotificationDetails(
+            'channel_id',
+            'channel_name',
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   void initState() {
     super.initState();
@@ -65,9 +87,23 @@ class _MyAppState extends State<MyApp> {
             itemBuilder: (BuildContext context, int i) {
               var message = _messages[i];
               final text = message.body;
-                if(text.contains("a")){
-                  notify();
+              if(text!.contains("4")){
+                notify();
+              }else{
+                if(text.contains("3")){
+
+                }else{
+                  if(text.contains("2")){
+
+                  }else{
+                    if(text.contains("1")){
+
+                    }else{
+                      safety();
+                   }
+                  }
                 }
+              }
 
               return ListTile(
                 title: Text('${message.sender} [${message.date}]'),
@@ -78,8 +114,8 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
-              final FlutterLocalNotificationsPlugin  flutterLocalNotificationsPlugin =
-              FlutterLocalNotificationsPlugin();
+            final FlutterLocalNotificationsPlugin  flutterLocalNotificationsPlugin =
+            FlutterLocalNotificationsPlugin();
 
             var permission = await Permission.sms.status;
             if (permission.isGranted) {
