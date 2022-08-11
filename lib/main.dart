@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final SmsQuery _query = SmsQuery();
   List<SmsMessage> _messages = [];
-  final FlutterLocalNotificationsPlugin  flutterLocalNotificationsPlugin =
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
   FlutterLocalNotificationsPlugin();
 
   notify() {
@@ -29,17 +29,18 @@ class _MyAppState extends State<MyApp> {
       ),
     ).then(
       // 通知の表示
-          (_) => flnp.show(
-        0,
-        '(重要)PAMSからのお知らせです',
-        '現在不審なsmsメッセージを受信しました。タップして詳細',
-        const NotificationDetails(
-          android: AndroidNotificationDetails(
-            'channel_id',
-            'channel_name',
+          (_) =>
+          flnp.show(
+            0,
+            '(重要)PAMSからのお知らせです',
+            '現在不審なsmsメッセージを受信しました。タップして詳細',
+            const NotificationDetails(
+              android: AndroidNotificationDetails(
+                'channel_id',
+                'channel_name',
+              ),
+            ),
           ),
-        ),
-      ),
     );
   }
 
@@ -51,109 +52,50 @@ class _MyAppState extends State<MyApp> {
       ),
     ).then(
       // 通知の表示
-          (_) => flnp.show(
-        0,
-        'PAMSからのお知らせ',
-        '現在受信したsmsは安全です',
-        const NotificationDetails(
-          android: AndroidNotificationDetails(
-            'channel_id',
-            'channel_name',
+          (_) =>
+          flnp.show(
+            0,
+            'PAMSからのお知らせ',
+            '現在受信したsmsは安全です',
+            const NotificationDetails(
+              android: AndroidNotificationDetails(
+                'channel_id',
+                'channel_name',
+              ),
+            ),
           ),
-        ),
-      ),
     );
   }
-
 
 
   @override
   void initState() {
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('pams-sms'),
-        ),
-        body: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: _messages.length,
-            itemBuilder: (BuildContext context, int i) {
-              var message = _messages[i];
-              final text = message.body;
-
-              var levels4 = ["a" , "z"];
-              var levels3 = ["a" , "z"];
-              var levels2 = ["a" , "z"];
-              var levels1 = ["a" , "z"];
-
-              //mongo-db list
-              List level4 = levels4;
-              List level3 = levels3;
-              List level2 = levels2;
-              List level1 = levels1;
-
-                //level4
-              for (var item4 in level4){
-                if(text!.contains(item4)){
-                  debugPrint('a');
-                }
-              }
-
-                //level3
-              for (var item3 in level3){
-                if(text!.contains(item3)){
-                  debugPrint('b');
-                }
-              }
-
-                //level2
-              for (var item2 in level2){
-                if(text!.contains(item2)) {
-                  debugPrint('c');
-                }
-              }
-
-                //level1
-              for (var item1 in level1){
-                if(text!.contains(item1)){
-                  debugPrint('d');
-                }
-              }
-
-              return ListTile(
-                title: Text('${message.sender} [${message.date}]'),
-                subtitle: Text('${message.body}'),
-              );
-            },
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('PAMS',style: Theme.of(context).textTheme.headline4),
+              Image.asset('images/sync-icon.png'),
+              const Text('status: active'),
+              const Text('datebase: active'),
+              const Text('システムはすべて正常に動作しています'),
+              const Text('お問い合わせはこちら'),
+              const Text('©2022. Hiroyoshi Muranaka'),
+            ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () async {
-            final FlutterLocalNotificationsPlugin  flutterLocalNotificationsPlugin =
-            FlutterLocalNotificationsPlugin();
-
-            var permission = await Permission.sms.status;
-            if (permission.isGranted) {
-              final messages = await _query.querySms(
-                kinds: [SmsQueryKind.inbox, SmsQueryKind.sent],
-                count: 10,
-              );
-              debugPrint('sms inbox messages: ${messages.length}');
-              setState(() => _messages = messages);
-            } else {
-              await Permission.sms.request();
-            }
-          },
-
-          child: const Icon(Icons.refresh),
-        ),
-      ),
-    );
+        )
+        )
+      );
   }
+
+
 }
