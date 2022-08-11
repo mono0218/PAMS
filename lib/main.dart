@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:mongo_dart/mongo_dart.dart'hide State;
-import 'package:pamssms/mongo_read.dart';
-import 'dart:developer';
-
 
 void main(List<String> arguments)async {
   runApp(const MyApp());
@@ -18,7 +14,6 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 
 }
-
 
 class _MyAppState extends State<MyApp> {
   final SmsQuery _query = SmsQuery();
@@ -92,8 +87,6 @@ class _MyAppState extends State<MyApp> {
               var message = _messages[i];
               final text = message.body;
 
-              Level4db();
-
               var levels4 = ["a" , "z"];
               var levels3 = ["a" , "z"];
               var levels2 = ["a" , "z"];
@@ -142,7 +135,6 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
-            Level4db();
             final FlutterLocalNotificationsPlugin  flutterLocalNotificationsPlugin =
             FlutterLocalNotificationsPlugin();
 
