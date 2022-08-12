@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                   OutlinedButton(
                     child: const Text('お問い合わせはこちら'),
                     style: OutlinedButton.styleFrom(
-                      primary: Colors.black,
+                      primary: Colors.black87,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),

@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:notifications/notifications.dart';
-
 import 'package:pamssms/UI.dart';
+import 'notification.dart';
 
 void main(List<String> arguments)async {
   runApp(const MyApp());
@@ -40,7 +39,42 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _log.add(event);
     });
-    print(event.toString());
+    var mono = [event.message];
+    print(mono);
+
+//mongo-db list
+    List level4 = [];
+    List level3 = [];
+    List level2 = [];
+    List level1 = [];
+
+    //level4
+    for (var item4 in level4){
+      if(mono.contains(item4)){
+        print('a');
+      }
+    }
+
+//level3
+    for (var item3 in level3){
+      if(mono.contains(item3)){
+        debugPrint('b');
+      }
+    }
+
+//level2
+    for (var item2 in level2){
+      if(mono.contains(item2)) {
+        debugPrint('c');
+      }
+    }
+
+//level1
+    for (var item1 in level1){
+      if(mono.contains(item1)){
+        debugPrint('d');
+      }
+    }
   }
 
   void startListening() {
@@ -52,10 +86,6 @@ class _MyAppState extends State<MyApp> {
       print(exception);
     }
   }
-
-
-  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
 
   @override
   Widget build(BuildContext context) {
