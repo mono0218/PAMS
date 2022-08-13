@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pamssms/main.dart';
+import 'first.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -8,6 +9,8 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
+
+
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -18,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'home',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: Scaffold(
             body: Center(
@@ -41,8 +44,8 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          const Text('status: active'),
-                          const Text('datebase: active'),
+                          const Text('status: active', style: TextStyle(fontSize: 20, color: Colors.green)),
+                          const Text('datebase: active',style: TextStyle(fontSize: 20, color: Colors.green)),
                         ]
                     ),
                   ),
@@ -52,41 +55,40 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          const Text('システムはすべて正常に動作しています'),
+                          const Text('システムはすべて正常に動作しています',style: TextStyle(fontSize: 15)),
                         ]
                     ),
                   ),
 
-                  OutlinedButton(
-                    child: const Text('お問い合わせはこちら'),
-                    style: OutlinedButton.styleFrom(
-                      primary: Colors.black87,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                  Container(
+                    margin: EdgeInsets.only(top: 50),
+                    child: OutlinedButton(
+                      child: const Text('お問い合わせはこちら'),
+                      style: OutlinedButton.styleFrom(
+                        primary: Colors.black87,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        side: const BorderSide(),
                       ),
-                      side: const BorderSide(),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => first()),
+                        );
+                      },
                     ),
-                    onPressed: () {
-                      launchUrl(
-                        Uri.parse('https://pams.monodev.cloud'),
-                      );
-                    },
                   ),
-                  OutlinedButton(
-                    child: const Text('お問い合わせはこちら'),
-                    style: OutlinedButton.styleFrom(
-                      primary: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      side: const BorderSide(),
-                    ),
-                    onPressed: () {},
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    margin: EdgeInsets.only(),
+                    child: Text('©2022. Hiroyoshi Muranaka'),
                   ),
                 ],
               ),
             )
         )
     );
+
   }
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:notifications/notifications.dart';
 import 'package:pamssms/UI.dart';
-import 'notification.dart';
+import 'package:intro_slider/intro_slider.dart';
 
 void main(List<String> arguments)async {
   runApp(const MyApp());
@@ -17,15 +17,18 @@ class MyApp extends StatefulWidget {
 
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp>{
   Notifications? _notifications;
   StreamSubscription<NotificationEvent>? _subscription;
   List<NotificationEvent> _log = [];
   bool started = false;
+  List<Slide> slides = [];
+
+
 
 
   @override
-  void initState() {
+  void initState() async{
     super.initState();
     initPlatformState();
   }
@@ -39,45 +42,45 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _log.add(event);
     });
-    var mono = [event.message];
-    print(mono);
+    var mono = (event.message);
 
 //mongo-db list
-    List level4 = [];
+    List level4 = ["a"];
     List level3 = [];
     List level2 = [];
     List level1 = [];
 
     //level4
-    for (var item4 in level4){
-      if(mono.contains(item4)){
+    for (var item4 in level4) {
+      print(mono);
+      if (mono!.contains(item4)) {
         print('a');
       }
     }
 
 //level3
-    for (var item3 in level3){
-      if(mono.contains(item3)){
+    for (var item3 in level3) {
+      if (mono!.contains(item3)) {
         debugPrint('b');
       }
     }
 
 //level2
-    for (var item2 in level2){
-      if(mono.contains(item2)) {
+    for (var item2 in level2) {
+      if (mono!.contains(item2)) {
         debugPrint('c');
       }
     }
 
 //level1
-    for (var item1 in level1){
-      if(mono.contains(item1)){
+    for (var item1 in level1) {
+      if (mono!.contains(item1)) {
         debugPrint('d');
       }
     }
   }
 
-  void startListening() {
+  void startListening() async{
     _notifications = Notifications();
     try {
       _subscription = _notifications!.notificationStream!.listen(onData);
@@ -96,6 +99,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
