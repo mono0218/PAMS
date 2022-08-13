@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _log.add(event);
     });
-    var mono = [event.message];
+    var mono = (event.message);
     print(mono);
 
 //mongo-db list
@@ -50,28 +50,28 @@ class _MyAppState extends State<MyApp> {
 
     //level4
     for (var item4 in level4){
-      if(mono.contains(item4)){
+      if(mono!.contains(item4)){
         print('a');
       }
     }
 
 //level3
     for (var item3 in level3){
-      if(mono.contains(item3)){
+      if(mono!.contains(item3)){
         debugPrint('b');
       }
     }
 
 //level2
     for (var item2 in level2){
-      if(mono.contains(item2)) {
+      if(mono!.contains(item2)) {
         debugPrint('c');
       }
     }
 
 //level1
     for (var item1 in level1){
-      if(mono.contains(item1)){
+      if(mono!.contains(item1)){
         debugPrint('d');
       }
     }

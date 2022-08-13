@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Home',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: Scaffold(
             body: Center(
@@ -41,8 +41,8 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          const Text('status: active'),
-                          const Text('datebase: active'),
+                          const Text('status: active', style: TextStyle(fontSize: 20, color: Colors.green)),
+                          const Text('datebase: active', style: TextStyle(fontSize: 20, color: Colors.green)),
                         ]
                     ),
                   ),
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          const Text('システムはすべて正常に動作しています'),
+                          const Text('システムはすべて正常に動作しています',style: TextStyle(fontSize: 15)),
                         ]
                     ),
                   ),
@@ -71,17 +71,6 @@ class _HomePageState extends State<HomePage> {
                         Uri.parse('https://pams.monodev.cloud'),
                       );
                     },
-                  ),
-                  OutlinedButton(
-                    child: const Text('お問い合わせはこちら'),
-                    style: OutlinedButton.styleFrom(
-                      primary: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      side: const BorderSide(),
-                    ),
-                    onPressed: () {},
                   ),
                 ],
               ),
