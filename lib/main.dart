@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:notifications/notifications.dart';
 import 'package:pamssms/UI.dart';
 import 'notification.dart';
+import 'first.dart';
 
 void main(List<String> arguments)async {
   runApp(const MyApp());
@@ -92,7 +93,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: HomePage()
+        home: IntroScreenDefault()
     );
   }
 }
