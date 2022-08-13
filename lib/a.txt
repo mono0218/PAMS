@@ -1,0 +1,55 @@
+body: Container(
+padding: const EdgeInsets.all(10.0),
+child: ListView.builder(
+shrinkWrap: true,
+itemCount: _messages.length,
+itemBuilder: (BuildContext context, int i) {
+var message = _messages[i];
+final text = message.body;
+
+var levels4 = ["a" , "z"];
+var levels3 = ["a" , "z"];
+var levels2 = ["a" , "z"];
+var levels1 = ["a" , "z"];
+
+//mongo-db list
+List level4 = levels4;
+List level3 = levels3;
+List level2 = levels2;
+List level1 = levels1;
+
+//level4
+for (var item4 in level4){
+if(text!.contains(item4)){
+debugPrint('a');
+}
+}
+
+//level3
+for (var item3 in level3){
+if(text!.contains(item3)){
+debugPrint('b');
+}
+}
+
+//level2
+for (var item2 in level2){
+if(text!.contains(item2)) {
+debugPrint('c');
+}
+}
+
+//level1
+for (var item1 in level1){
+if(text!.contains(item1)){
+debugPrint('d');
+}
+}
+
+return ListTile(
+title: Text('${message.sender} [${message.date}]'),
+subtitle: Text('${message.body}'),
+);
+},
+),
+),
