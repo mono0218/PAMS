@@ -1,9 +1,14 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/print.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_background/flutter_background.dart';
 import 'package:notifications/notifications.dart';
-import 'package:pamssms/UI.dart';
+import 'package:pamssms/Main-UI.dart';
+import 'package:http/http.dart' as http;
 import 'notification.dart';
-import 'first.dart';
+import 'package:flutter_background_service/flutter_background_service.dart';
 
 void main(List<String> arguments)async {
   runApp(const MyApp());
@@ -18,6 +23,8 @@ class MyApp extends StatefulWidget {
 
 }
 
+
+
 class _MyAppState extends State<MyApp> {
   Notifications? _notifications;
   StreamSubscription<NotificationEvent>? _subscription;
@@ -25,10 +32,12 @@ class _MyAppState extends State<MyApp> {
   bool started = false;
 
 
+
   @override
   void initState() {
-    super.initState();
     initPlatformState();
+    super.initState();
+    initializeService();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -36,46 +45,17 @@ class _MyAppState extends State<MyApp> {
     startListening();
   }
 
-  void onData(NotificationEvent event) {
-    setState(() {
-      _log.add(event);
-    });
-    var mono = (event.message);
-    print(mono);
+  Future<void> initializeService() async {
+    final androidConfig = FlutterBackgroundAndroidConfig(
+      notificationTitle: "flutter_background example app",
+      notificationText: "Background notification for keeping the example app running in the background",
+      notificationImportance: AndroidNotificationImportance.Default,
+      notificationIcon: AndroidResource(name: 'background_icon', defType: 'drawable'),
+    );
+    bool success = await FlutterBackground.initialize(androidConfig: androidConfig);
+    FlutterBackground.initialize();
+    FlutterBackground.enableBackgroundExecution();
 
-//mongo-db list
-    List level4 = [];
-    List level3 = [];
-    List level2 = [];
-    List level1 = [];
-
-    //level4
-    for (var item4 in level4){
-      if(mono!.contains(item4)){
-        print('a');
-      }
-    }
-
-//level3
-    for (var item3 in level3){
-      if(mono!.contains(item3)){
-        debugPrint('b');
-      }
-    }
-
-//level2
-    for (var item2 in level2){
-      if(mono!.contains(item2)) {
-        debugPrint('c');
-      }
-    }
-
-//level1
-    for (var item1 in level1){
-      if(mono!.contains(item1)){
-        debugPrint('d');
-      }
-    }
   }
 
   void startListening() {
@@ -88,15 +68,50 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  onData(NotificationEvent event)  async {
+    setState(() {
+      _log.add(event);
+    });
+    var mono = (event.message);
+    print(mono);
+
+    final url = Uri.parse('https://8381-106-180-11-37.jp.ngrok.io/post/' + mono!);
+    http.Response resp = await http.post(url);
+    if (resp.statusCode != 200) {
+      debugPrint("エラーが発生しました");
+      return;
+    }else{
+      debugPrint(resp.body.toString());
+      Map<String, dynamic> map = jsonDecode(resp.body);
+      String result = map["result"];
+      debugPrint(result);
+
+      if(result != "ham"){
+        notify();
+      }
+    }
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'PAMS-main',
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: IntroScreenDefault()
+        home: HomePage()
     );
   }
 }
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
 
 
 

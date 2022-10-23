@@ -45,3 +45,26 @@ safety() {
         ),
   );
 }
+
+error() {
+  final flnp = FlutterLocalNotificationsPlugin();
+  return flnp.initialize(
+    const InitializationSettings(
+      android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+    ),
+  ).then(
+    // 通知の表示
+        (_) =>
+        flnp.show(
+          0,
+          'PAMSからのお知らせ',
+          'エラーが発生しました',
+          const NotificationDetails(
+            android: AndroidNotificationDetails(
+              'channel_id',
+              'channel_name',
+            ),
+          ),
+        ),
+  );
+}
