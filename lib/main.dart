@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_background/flutter_background.dart';
 import 'package:notifications/notifications.dart';
 import 'package:pamssms/Main-UI.dart';
-import 'ai.dart';
 import 'package:http/http.dart' as http;
 import 'notification.dart';
 
