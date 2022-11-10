@@ -1,9 +1,5 @@
-import 'package:adobe_xd/pinned.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:pamssms/main.dart';
-
-import 'package:google_fonts/google_fonts.dart';
 
 
 class Futter extends StatelessWidget {

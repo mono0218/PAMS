@@ -52,6 +52,10 @@ dependencies:
   flutter_background_service: ^2.4.5
   flutter_foreground_task: ^3.10.0
   flutter_background: ^1.1.0
+  flutter_launcher_icons: ^0.10.0
+  device_info_plus: ^4.0.0
+  firebase_core: ^2.1.1
+  firebase_messaging: ^14.0.4
 
 
 dev_dependencies:
@@ -62,3 +66,8 @@ flutter:
   uses-material-design: true
   assets:
     - images/
+    -
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "images/Icon-512.png"
