@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="263dp"
+        android:layout_height="66dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:text="プライバシーポリシーの確認"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="231dp"
+        android:layout_height="94dp"
+        android:layout_marginBottom="76dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:text="下のボタンを押した時点で\n同意したものとみなします"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="173dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="onClick"
+        android:text="同意する"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:layout_width="264dp"
+        android:layout_height="407dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="プライバシーポリシー\n\n第三者に個人を特定できる情報を提供することはありません。個人情報の管理には細心の注意を払い、以下に掲げたとおりに扱います。\n\n１.アプリ内で使用する権限\n ・通知の読み取り権限\n ・バックグラウンドでの操作\n\n 2.通知解析\n 本アプリは端末の通知を読み取りフィッシング判別サーバーに送信しています。\n\nフィッシング判別サーバーのセキュリティを徹底し通知内容漏洩防止に努めています。通知内容がサーバーに保存されることはありません。\n\n３.データー解析\nアプリの利便性向上のため、匿名で個人を特定できない範囲で最新の注意を払い、クラッシュ等の解析をしております。素早いバグ修正などにのみ使用します。ここで収集する情報の例は以下の通りです\n\n ・端末情報\n ・OSバージョン\n ・エラー情報\n\n ４.免責事項\n利用上の不具合・不都合によって生じたアプリ使用者の損害に関して、開発元は責任を負わないものとします。\n\n "/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.monodev.PAMS">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <service android:name="com.monodev.PAMS.MyNotificationListener"
+            android:label="My Notification Listener"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.monodev.PAMS.MainActivity"
+            tools:ignore="Instantiatable"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.monodev.PAMS.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.monodev.PAMS.activity_1"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name="com.monodev.PAMS.activity_1_5"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name="com.monodev.PAMS.activity_1_5_5"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name="com.monodev.PAMS.activity_2"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name="com.monodev.PAMS.activity_3"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name="com.monodev.PAMS.activity_4"
+            android:exported="true">
+        </activity>
+
+        <service
+            android:name="com.monodev.PAMS.TestForegroundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.monodev.PAMS.TestForegroundReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.myapplication" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.monodev.PAMS.notification"
+            android:process=":remote" />
+    </application>
+
+</manifest>

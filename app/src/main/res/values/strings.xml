@@ -1,0 +1,8 @@
+<resources>
+    <string name="button">Your App Name</string>
+    <string name="img_description">image</string>
+    <string name="aiueo">フィッシング検知機能は\n正常に動作しています</string>
+    <string name="channel_name" >PAMS</string>
+    <string name="channel_description" >PAMS</string>
+    <string name="app_name">PAMS</string>
+</resources>
