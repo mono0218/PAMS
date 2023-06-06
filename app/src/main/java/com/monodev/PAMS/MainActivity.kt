@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         var data = getSharedPreferences("status", Context.MODE_PRIVATE)
         var Status = data.getBoolean("status",false)
 
-        if(Status == false){
+        if(!Status){
             setContentView(R.layout.activity_sub)
             val startbutton = findViewById<Button>(R.id.start)
             startbutton.setOnClickListener(this)

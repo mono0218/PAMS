@@ -27,6 +27,7 @@
         android:id="@+id/textView8"
         android:layout_width="269dp"
         android:layout_height="290dp"
+        android:layout_marginBottom="150dp"
         android:fontFamily="sans-serif-thin"
         android:gravity="center"
         android:text="PAMSは\n以下の権限を使用します\n\n・通知内容の読み取り\n\n・バックグラウンドの動作\n\n・通知の送信"
@@ -34,13 +35,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683" />
 
     <Button
         android:id="@+id/btn"
         android:layout_width="173dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="80dp"
         android:onClick="onClick"
         android:text="設定する"
         app:layout_constraintBottom_toBottomOf="parent"
