@@ -10,8 +10,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@voximplant/react-native-foreground-service": "^3.0.2",
+    "axios": "^1.4.0",
     "react": "18.2.0",
-    "react-native": "^0.71.8"
+    "react-native": "^0.71.8",
+    "react-native-android-notification-listener": "^5.0.1",
+    "react-native-permissions": "^3.8.0",
+    "react-native-push-notification": "^8.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

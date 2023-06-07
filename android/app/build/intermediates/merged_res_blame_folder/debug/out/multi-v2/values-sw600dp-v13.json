@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.pams.app-mergeDebugResources-20:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.pams.app-mergeDebugResources-22:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/monokamo/.gradle/caches/transforms-3/2869819762abc67901fd58a9b84e0d6d/transformed/appcompat-1.4.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",

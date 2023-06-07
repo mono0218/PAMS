@@ -283,6 +283,7 @@
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="config_tooltipAnimTime">150</integer>
+    <integer name="google_play_services_version">12451000</integer>
     <integer name="react_native_dev_server_port">8081</integer>
     <integer name="react_native_inspector_proxy_port">8081</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
@@ -347,6 +348,8 @@
     <string name="catalyst_settings" project="catalyst" translatable="false">Settings</string>
     <string name="catalyst_settings_title" project="catalyst" translatable="false">Debug Settings</string>
     <string name="combobox_description" translatable="false">Combo Box</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="header_description" translatable="false">Heading</string>
     <string name="image_description" translatable="false">Image</string>
     <string name="imagebutton_description" translatable="false">Button, Image</string>

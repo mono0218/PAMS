@@ -903,6 +903,7 @@ integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer cancel_button_image_alpha
 integer config_tooltipAnimTime
+integer google_play_services_version
 integer react_native_dev_server_port
 integer react_native_inspector_proxy_port
 integer status_bar_notification_info_maxnum
@@ -1023,6 +1024,8 @@ string catalyst_sample_profiler_enable
 string catalyst_settings
 string catalyst_settings_title
 string combobox_description
+string common_google_play_services_unknown_issue
+string fcm_fallback_notification_channel_label
 string header_description
 string image_description
 string imagebutton_description

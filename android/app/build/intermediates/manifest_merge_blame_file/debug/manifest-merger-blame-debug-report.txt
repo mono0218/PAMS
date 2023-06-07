@@ -14,82 +14,332 @@
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:3:5-67
 12-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:3:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.125.0] /Users/monokamo/.gradle/caches/transforms-3/1de5dee59d1627955e42d3d6205f726e/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.125.0] /Users/monokamo/.gradle/caches/transforms-3/1de5dee59d1627955e42d3d6205f726e/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
-14
-15    <application
-15-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:5:5-24:19
-16        android:name="com.pams.MainApplication"
-16-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:6:7-38
-17        android:allowBackup="false"
-17-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:10:7-34
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.7.0] /Users/monokamo/.gradle/caches/transforms-3/3994986e4b6f29f228dfe8fb9122f0d7/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:8:7-41
-21        android:label="@string/app_name"
-21-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:7:7-39
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:9:7-52
-23        android:theme="@style/AppTheme"
-23-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:11:7-38
-24        android:usesCleartextTraffic="true" >
-24-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:8:9-44
-25        <activity
-25-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:11:9-111
-26            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-26-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:11:19-83
-27            android:exported="false" />
-27-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:11:84-108
-28        <activity
-28-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:12:7-23:18
-29            android:name="com.pams.MainActivity"
-29-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:13:9-37
-30            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-30-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:15:9-118
-31            android:exported="true"
-31-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:18:9-32
-32            android:label="@string/app_name"
-32-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:14:9-41
-33            android:launchMode="singleTask"
-33-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:16:9-40
-34            android:windowSoftInputMode="adjustResize" >
-34-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:17:9-51
-35            <intent-filter>
-35-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:19:9-22:25
-36                <action android:name="android.intent.action.MAIN" />
-36-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:20:13-65
-36-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:20:21-62
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:21:13-73
-38-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:21:23-70
-39            </intent-filter>
-40        </activity>
-41
-42        <provider
-42-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-43            android:name="androidx.startup.InitializationProvider"
-43-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-44            android:authorities="com.pams.androidx-startup"
-44-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-45            android:exported="false" >
-45-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-46            <meta-data
-46-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-47                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-47-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-48                android:value="androidx.startup" />
-48-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-49            <meta-data
-49-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/monokamo/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-50                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-50-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/monokamo/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-51                android:value="androidx.startup" />
-51-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/monokamo/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-52        </provider>
-53    </application>
-54
-55</manifest>
+13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+13-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:4:5-76
+13-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:4:22-74
+14    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+14-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:5:5-80
+14-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:5:22-78
+15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+15-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:6:5-77
+15-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:6:22-74
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->[com.facebook.flipper:flipper:0.125.0] /Users/monokamo/.gradle/caches/transforms-3/1de5dee59d1627955e42d3d6205f726e/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+16-->[com.facebook.flipper:flipper:0.125.0] /Users/monokamo/.gradle/caches/transforms-3/1de5dee59d1627955e42d3d6205f726e/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+17    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+17-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-93
+17-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-90
+18    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+18-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-75
+18-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-72
+19    <uses-permission android:name="android.permission.WAKE_LOCK" />
+19-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-68
+19-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-65
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+20-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:22:5-79
+20-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:22:22-76
+21    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- for android -->
+21-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:25:5-82
+21-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:25:22-79
+22    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+23    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+24    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+25    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+26    <!-- for Samsung -->
+27    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+27-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:5-86
+27-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:22-83
+28    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+28-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:5-87
+28-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:22-84
+29    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+29-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:5-81
+29-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:22-78
+30    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+30-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:5-83
+30-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:22-80
+31    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+31-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:5-88
+31-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:22-85
+32    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+32-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:5-92
+32-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:22-89
+33    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+33-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:5-84
+33-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:22-81
+34    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+34-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:5-83
+34-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:22-80
+35    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+35-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:5-91
+35-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:22-88
+36    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+36-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:5-92
+36-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:22-89
+37    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+37-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:5-93
+37-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:22-90
+38    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
+38-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:5-73
+38-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:22-70
+39    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+39-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:5-82
+39-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:22-79
+40    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
+40-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:5-83
+40-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:22-80
+41    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+41-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:5-88
+41-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:22-85
+42    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+42-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:5-89
+42-->[me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:22-86
+43
+44    <application
+44-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:10:5-30:19
+45        android:name="com.pams.MainApplication"
+45-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:11:7-38
+46        android:allowBackup="false"
+46-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:15:7-34
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.7.0] /Users/monokamo/.gradle/caches/transforms-3/3994986e4b6f29f228dfe8fb9122f0d7/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+48        android:debuggable="true"
+49        android:icon="@mipmap/ic_launcher"
+49-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:13:7-41
+50        android:label="@string/app_name"
+50-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:12:7-39
+51        android:roundIcon="@mipmap/ic_launcher_round"
+51-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:14:7-52
+52        android:theme="@style/AppTheme"
+52-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:16:7-38
+53        android:usesCleartextTraffic="true" >
+53-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:8:9-44
+54        <activity
+54-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:11:9-111
+55            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+55-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:11:19-83
+56            android:exported="false" />
+56-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/debug/AndroidManifest.xml:11:84-108
+57        <activity
+57-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:17:7-28:18
+58            android:name="com.pams.MainActivity"
+58-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:18:9-37
+59            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+59-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:20:9-118
+60            android:exported="true"
+60-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:23:9-32
+61            android:label="@string/app_name"
+61-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:19:9-41
+62            android:launchMode="singleTask"
+62-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:21:9-40
+63            android:windowSoftInputMode="adjustResize" >
+63-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:22:9-51
+64            <intent-filter>
+64-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:24:9-27:25
+65                <action android:name="android.intent.action.MAIN" />
+65-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:25:13-65
+65-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:25:21-62
+66
+67                <category android:name="android.intent.category.LAUNCHER" />
+67-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:26:13-73
+67-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:26:23-70
+68            </intent-filter>
+69        </activity>
+70
+71        <service android:name="com.voximplant.foregroundservice.VIForegroundService" >
+71-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:29:9-97
+71-->/Users/monokamo/AndroidStudioProjects/PAMS/android/app/src/main/AndroidManifest.xml:29:18-85
+72        </service>
+73        <service
+73-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-23:19
+74            android:name="com.lesimoes.androidnotificationlistener.RNAndroidNotificationListener"
+74-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-98
+75            android:exported="true"
+75-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-36
+76            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+76-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-87
+77            <intent-filter>
+77-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:29
+78                <action android:name="android.service.notification.NotificationListenerService" />
+78-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-99
+78-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-96
+79            </intent-filter>
+80        </service>
+81        <service android:name="com.lesimoes.androidnotificationlistener.RNAndroidNotificationListenerHeadlessJsTaskService" />
+81-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:9-127
+81-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:18-124
+82
+83        <receiver
+83-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:9-36:20
+84            android:name="com.lesimoes.androidnotificationlistener.BootUpReceiver"
+84-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-83
+85            android:enabled="true"
+85-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-35
+86            android:exported="true"
+86-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-36
+87            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+87-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-75
+88            <intent-filter>
+88-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-35:29
+89                <action android:name="android.intent.action.BOOT_COMPLETED" />
+89-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:17-79
+89-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:25-76
+90
+91                <category android:name="android.intent.category.DEFAULT" />
+91-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:17-76
+91-->[:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:27-73
+92            </intent-filter>
+93        </receiver>
+94        <receiver
+94-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:28:9-35:20
+95            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+95-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:29:13-78
+96            android:exported="true"
+96-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:30:13-36
+97            android:permission="com.google.android.c2dm.permission.SEND" >
+97-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:31:13-73
+98            <intent-filter>
+98-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:32:13-34:29
+99                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+99-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:33:17-81
+99-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:33:25-78
+100            </intent-filter>
+101        </receiver>
+102        <!--
+103             FirebaseMessagingService performs security checks at runtime,
+104             but set to not exported to explicitly avoid allowing another app to call it.
+105        -->
+106        <service
+106-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:41:9-48:19
+107            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+107-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:42:13-82
+108            android:directBootAware="true"
+108-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:43:13-43
+109            android:exported="false" >
+109-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:44:13-37
+110            <intent-filter android:priority="-500" >
+110-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:45:13-47:29
+110-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:45:28-51
+111                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+111-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:46:17-78
+111-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:46:25-75
+112            </intent-filter>
+113        </service>
+114        <service
+114-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:49:9-55:19
+115            android:name="com.google.firebase.components.ComponentDiscoveryService"
+115-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:50:13-84
+116            android:directBootAware="true"
+116-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
+117            android:exported="false" >
+117-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:51:13-37
+118            <meta-data
+118-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:52:13-54:85
+119                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+119-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:53:17-119
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[com.google.firebase:firebase-messaging:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/97ce3fb1f67861a5b45d3297f7547fc9/transformed/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:54:17-82
+121            <meta-data
+121-->[com.google.firebase:firebase-iid:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/e451a78de28cd79ba3e1eef1eba0848d/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:32:13-34:85
+122                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+122-->[com.google.firebase:firebase-iid:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/e451a78de28cd79ba3e1eef1eba0848d/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:33:17-96
+123                android:value="com.google.firebase.components.ComponentRegistrar" />
+123-->[com.google.firebase:firebase-iid:21.1.0] /Users/monokamo/.gradle/caches/transforms-3/e451a78de28cd79ba3e1eef1eba0848d/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:34:17-82
+124            <meta-data
+124-->[com.google.firebase:firebase-datatransport:17.0.10] /Users/monokamo/.gradle/caches/transforms-3/f808bfd98aa6488525fd68d4728dc8fa/transformed/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:28:13-30:85
+125                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+125-->[com.google.firebase:firebase-datatransport:17.0.10] /Users/monokamo/.gradle/caches/transforms-3/f808bfd98aa6488525fd68d4728dc8fa/transformed/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:29:17-115
+126                android:value="com.google.firebase.components.ComponentRegistrar" />
+126-->[com.google.firebase:firebase-datatransport:17.0.10] /Users/monokamo/.gradle/caches/transforms-3/f808bfd98aa6488525fd68d4728dc8fa/transformed/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:30:17-82
+127            <meta-data
+127-->[com.google.firebase:firebase-installations:16.3.5] /Users/monokamo/.gradle/caches/transforms-3/d83176ab3ee946276f5a5abcbf287b97/transformed/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
+128                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+128-->[com.google.firebase:firebase-installations:16.3.5] /Users/monokamo/.gradle/caches/transforms-3/d83176ab3ee946276f5a5abcbf287b97/transformed/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
+129                android:value="com.google.firebase.components.ComponentRegistrar" />
+129-->[com.google.firebase:firebase-installations:16.3.5] /Users/monokamo/.gradle/caches/transforms-3/d83176ab3ee946276f5a5abcbf287b97/transformed/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
+130            <!--
+131                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+132                clients to use it as well, by defining this registrar in their own core/common library.
+133            -->
+134            <meta-data
+134-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
+135                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+135-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
+136                android:value="com.google.firebase.components.ComponentRegistrar" />
+136-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
+137        </service>
+138
+139        <provider
+139-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
+140            android:name="com.google.firebase.provider.FirebaseInitProvider"
+140-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
+141            android:authorities="com.pams.firebaseinitprovider"
+141-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
+142            android:directBootAware="true"
+142-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
+143            android:exported="false"
+143-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
+144            android:initOrder="100" />
+144-->[com.google.firebase:firebase-common:19.5.0] /Users/monokamo/.gradle/caches/transforms-3/00d6ca4338583c5c7d5a0168f2a5de8f/transformed/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
+145
+146        <meta-data
+146-->[com.google.android.gms:play-services-basement:17.0.0] /Users/monokamo/.gradle/caches/transforms-3/032474ad93f5620f628e11393333edf6/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+147            android:name="com.google.android.gms.version"
+147-->[com.google.android.gms:play-services-basement:17.0.0] /Users/monokamo/.gradle/caches/transforms-3/032474ad93f5620f628e11393333edf6/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+148            android:value="@integer/google_play_services_version" />
+148-->[com.google.android.gms:play-services-basement:17.0.0] /Users/monokamo/.gradle/caches/transforms-3/032474ad93f5620f628e11393333edf6/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+149
+150        <provider
+150-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+151            android:name="androidx.startup.InitializationProvider"
+151-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+152            android:authorities="com.pams.androidx-startup"
+152-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+153            android:exported="false" >
+153-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+154            <meta-data
+154-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+155                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+155-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+156                android:value="androidx.startup" />
+156-->[androidx.emoji2:emoji2:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+157            <meta-data
+157-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/monokamo/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+158                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+158-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/monokamo/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+159                android:value="androidx.startup" />
+159-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/monokamo/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+160        </provider>
+161
+162        <service
+162-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/monokamo/.gradle/caches/transforms-3/c1ac58004fa786991bcea3fdee9f5b70/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+163            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+163-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/monokamo/.gradle/caches/transforms-3/c1ac58004fa786991bcea3fdee9f5b70/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+164            android:exported="false" >
+164-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/monokamo/.gradle/caches/transforms-3/c1ac58004fa786991bcea3fdee9f5b70/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+165            <meta-data
+165-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/monokamo/.gradle/caches/transforms-3/c1ac58004fa786991bcea3fdee9f5b70/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+166                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+166-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/monokamo/.gradle/caches/transforms-3/c1ac58004fa786991bcea3fdee9f5b70/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+167                android:value="cct" />
+167-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/monokamo/.gradle/caches/transforms-3/c1ac58004fa786991bcea3fdee9f5b70/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+168        </service>
+169        <service
+169-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/monokamo/.gradle/caches/transforms-3/ead6f46a72b83e3e06a521d04cea6951/transformed/jetified-transport-runtime-2.2.5/AndroidManifest.xml:26:9-30:19
+170            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+170-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/monokamo/.gradle/caches/transforms-3/ead6f46a72b83e3e06a521d04cea6951/transformed/jetified-transport-runtime-2.2.5/AndroidManifest.xml:27:13-117
+171            android:exported="false"
+171-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/monokamo/.gradle/caches/transforms-3/ead6f46a72b83e3e06a521d04cea6951/transformed/jetified-transport-runtime-2.2.5/AndroidManifest.xml:28:13-37
+172            android:permission="android.permission.BIND_JOB_SERVICE" >
+172-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/monokamo/.gradle/caches/transforms-3/ead6f46a72b83e3e06a521d04cea6951/transformed/jetified-transport-runtime-2.2.5/AndroidManifest.xml:29:13-69
+173        </service>
+174
+175        <receiver
+175-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/monokamo/.gradle/caches/transforms-3/ead6f46a72b83e3e06a521d04cea6951/transformed/jetified-transport-runtime-2.2.5/AndroidManifest.xml:32:9-34:40
+176            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+176-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/monokamo/.gradle/caches/transforms-3/ead6f46a72b83e3e06a521d04cea6951/transformed/jetified-transport-runtime-2.2.5/AndroidManifest.xml:33:13-132
+177            android:exported="false" />
+177-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/monokamo/.gradle/caches/transforms-3/ead6f46a72b83e3e06a521d04cea6951/transformed/jetified-transport-runtime-2.2.5/AndroidManifest.xml:34:13-37
+178    </application>
+179
+180</manifest>

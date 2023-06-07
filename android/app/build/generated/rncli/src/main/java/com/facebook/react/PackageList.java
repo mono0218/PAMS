@@ -11,7 +11,14 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
+// @voximplant/react-native-foreground-service
+import com.voximplant.foregroundservice.VIForegroundServicePackage;
+// react-native-android-notification-listener
+import com.lesimoes.androidnotificationlistener.RNAndroidNotificationListenerPackage;
+// react-native-permissions
+import com.zoontek.rnpermissions.RNPermissionsPackage;
+// react-native-push-notification
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 
 public class PackageList {
   private Application application;
@@ -56,7 +63,11 @@ public class PackageList {
 
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
-      new MainReactPackage(mConfig)
+      new MainReactPackage(mConfig),
+      new VIForegroundServicePackage(),
+      new RNAndroidNotificationListenerPackage(),
+      new RNPermissionsPackage(),
+      new ReactNativePushNotificationPackage()
     ));
   }
 }
