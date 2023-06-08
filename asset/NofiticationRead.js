@@ -16,7 +16,9 @@ export async function CheckStatus(){
 export async function NotificationOn(){
     const headlessNotificationListener = async ({notification}) => {
         const text = JSON.parse(notification).text;
-        await post(text)
+        console.log(text)
+        const result = await post(text)
+        console.log(result)
     }
 
     AppRegistry.registerHeadlessTask(

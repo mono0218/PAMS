@@ -1,6 +1,9 @@
-import axios from 'axios'
-import {Notification} from "./notification";
+import OnnxRuntime from 'onnxruntime-react-native';
+
+const InferenceSession = OnnxRuntime.InferenceSession;
+
 export async function post(message){
-    await axios.post("https://cfb6-103-115-217-203.ngrok-free.app/post/", {message:message})
-        .then((response) => {Notification(response.data)}).catch((response)=> Notification(response.data));
+    const sess = await InferenceSession.create("./monokamo.onnx")
+    const feeds = {text: new OnnxRuntime.Tensor([message] , [1,1])};
+    return await sess.run(feeds, [sess.outputNames[0]])
 }

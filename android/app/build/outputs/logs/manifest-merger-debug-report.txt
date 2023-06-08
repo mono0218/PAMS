@@ -9,6 +9,7 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /Users/monokam
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /Users/monokamo/.gradle/caches/transforms-3/db3a645b5c401b5669a12f79ae5c6c0c/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/monokamo/.gradle/caches/transforms-3/1de5dee59d1627955e42d3d6205f726e/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:8:1-18:12
 MERGED from [:voximplant_react-native-foreground-service] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/@voximplant/react-native-foreground-service/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:onnxruntime-react-native] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/onnxruntime-react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-39:12
 MERGED from [:react-native-permissions] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-push-notification] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-push-notification/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -83,6 +84,7 @@ MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/monoka
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/7515281c598c65947497c6f9c4193053/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/2473a171587adf53535d1ade7142b8da/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/5e1f88c8b59ea9f8ea546c2c62d63130/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.microsoft.onnxruntime:onnxruntime-android:1.15.0] /Users/monokamo/.gradle/caches/transforms-3/8813bf26a768ab1895bd41ac2673c69b/transformed/jetified-onnxruntime-android-1.15.0/AndroidManifest.xml:2:1-7:12
 MERGED from [me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:2:1-52:12
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/monokamo/.gradle/caches/transforms-3/68bcfb91eaf09d5b3ad76e71e3371ec2/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/monokamo/.gradle/caches/transforms-3/2c406cc44c7e51a6483579314a113f0f/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -245,6 +247,8 @@ MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/monokamo/.gradle/cache
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/monokamo/.gradle/caches/transforms-3/1de5dee59d1627955e42d3d6205f726e/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [:voximplant_react-native-foreground-service] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/@voximplant/react-native-foreground-service/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:voximplant_react-native-foreground-service] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/@voximplant/react-native-foreground-service/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:onnxruntime-react-native] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/onnxruntime-react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:onnxruntime-react-native] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/onnxruntime-react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-android-notification-listener] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-android-notification-listener/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-permissions] /Users/monokamo/AndroidStudioProjects/PAMS/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -393,6 +397,8 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/2473a171587adf53535d1ade7142b8da/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/5e1f88c8b59ea9f8ea546c2c62d63130/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/monokamo/.gradle/caches/transforms-3/5e1f88c8b59ea9f8ea546c2c62d63130/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.microsoft.onnxruntime:onnxruntime-android:1.15.0] /Users/monokamo/.gradle/caches/transforms-3/8813bf26a768ab1895bd41ac2673c69b/transformed/jetified-onnxruntime-android-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.microsoft.onnxruntime:onnxruntime-android:1.15.0] /Users/monokamo/.gradle/caches/transforms-3/8813bf26a768ab1895bd41ac2673c69b/transformed/jetified-onnxruntime-android-1.15.0/AndroidManifest.xml:5:5-44
 MERGED from [me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:7:5-9:41
 MERGED from [me.leolin:ShortcutBadger:1.1.22] /Users/monokamo/.gradle/caches/transforms-3/d57df76032d7708fb0b244e21645019f/transformed/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/monokamo/.gradle/caches/transforms-3/68bcfb91eaf09d5b3ad76e71e3371ec2/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:5:5-7:41

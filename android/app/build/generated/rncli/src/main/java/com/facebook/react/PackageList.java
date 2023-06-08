@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 // @voximplant/react-native-foreground-service
 import com.voximplant.foregroundservice.VIForegroundServicePackage;
+// onnxruntime-react-native
+import ai.onnxruntime.reactnative.OnnxruntimePackage;
 // react-native-android-notification-listener
 import com.lesimoes.androidnotificationlistener.RNAndroidNotificationListenerPackage;
 // react-native-permissions
@@ -65,6 +67,7 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new VIForegroundServicePackage(),
+      new OnnxruntimePackage(),
       new RNAndroidNotificationListenerPackage(),
       new RNPermissionsPackage(),
       new ReactNativePushNotificationPackage()
