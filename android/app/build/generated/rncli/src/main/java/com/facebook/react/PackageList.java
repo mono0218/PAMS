@@ -17,6 +17,8 @@ import com.voximplant.foregroundservice.VIForegroundServicePackage;
 import ai.onnxruntime.reactnative.OnnxruntimePackage;
 // react-native-android-notification-listener
 import com.lesimoes.androidnotificationlistener.RNAndroidNotificationListenerPackage;
+// react-native-fs
+import com.rnfs.RNFSPackage;
 // react-native-permissions
 import com.zoontek.rnpermissions.RNPermissionsPackage;
 // react-native-push-notification
@@ -69,6 +71,7 @@ public class PackageList {
       new VIForegroundServicePackage(),
       new OnnxruntimePackage(),
       new RNAndroidNotificationListenerPackage(),
+      new RNFSPackage(),
       new RNPermissionsPackage(),
       new ReactNativePushNotificationPackage()
     ));
