@@ -4,8 +4,8 @@ export async function Notification(result){
         try{
             PushNotification.localNotification({
                 channelId: "warning",
-                title: "Test",
-                message: "Test",
+                title: "PAMSからの警告です",
+                message: "フィシングメッセージを受信した可能性があります",
                 importance: Importance.HIGH,
             })
         }catch (e) {
