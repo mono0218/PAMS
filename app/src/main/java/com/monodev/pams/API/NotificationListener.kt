@@ -1,4 +1,4 @@
-package com.monodev.pams
+package com.monodev.pams.API
 
 import android.app.Notification
 import android.service.notification.NotificationListenerService

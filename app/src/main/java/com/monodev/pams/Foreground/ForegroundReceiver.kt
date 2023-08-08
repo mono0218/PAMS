@@ -1,9 +1,8 @@
-package com.monodev.pams
+package com.monodev.pams.Foreground
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.monodev.pams.ForegroundService
 
 class ForegroundReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

@@ -4,13 +4,19 @@ import android.app.NotificationManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.monodev.pams.BuildConfig
+import com.monodev.pams.Foreground.ForegroundService
+import com.monodev.pams.component.MainMenu
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContent{
+            MainMenu()
+        }
+
         val intent = Intent(this, ForegroundService::class.java)
         startForegroundService(intent)
 
@@ -26,9 +32,5 @@ class MainActivity : ComponentActivity() {
             notificationManager.createNotificationChannel(mChannel)
         }
 
-        super.onCreate(savedInstanceState)
-        setContent{
-            Home()
-        }
     }
 }
