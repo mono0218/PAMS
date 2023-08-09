@@ -2,10 +2,12 @@ package com.monodev.pams
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
+import android.content.res.AssetManager
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.navigation.NavHost
 import com.monodev.pams.Foreground.ForegroundService
 import com.monodev.pams.component.MainMenu
 
@@ -31,6 +33,5 @@ class MainActivity : ComponentActivity() {
             val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(mChannel)
         }
-
     }
 }

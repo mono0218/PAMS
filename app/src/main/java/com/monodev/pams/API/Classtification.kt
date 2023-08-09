@@ -1,34 +1,32 @@
 package com.monodev.pams.API
+
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment
 import ai.onnxruntime.OrtSession
-import android.util.Log
-import java.io.File
+import android.content.res.Resources
+import com.monodev.pams.R
 
-
-
-fun main (input:String){
+fun main (input: String, resources: Resources){
     val ortEnvironment = OrtEnvironment.getEnvironment()
-    val ortSession = createORTSession( ortEnvironment )
-    val output = runPrediction( input , ortSession , ortEnvironment )
-    Log.i("PAMS", output.toString())
+    val ortSession = createSession(ortEnvironment,resources)
+    val results = runClassification(input,ortSession,ortEnvironment) as Array<String>
+    if ("spam" === results[0]){
+        /*TODO*/
+    }
 }
 
-private fun createORTSession( ortEnvironment: OrtEnvironment ) : OrtSession {
-    return ortEnvironment.createSession( "file:///android_asset/monokamo.onnx")
+private fun createSession(ortEnvironment: OrtEnvironment, resources: Resources) : OrtSession {
+    val model = resources.openRawResource(R.raw.monokamo).readBytes()
+    return ortEnvironment.createSession(model)
 }
 
-private fun runPrediction( input : String , ortSession: OrtSession , ortEnvironment: OrtEnvironment ) : Float {
+private fun runClassification(input:String,ortSession:OrtSession,ortEnvironment:OrtEnvironment): Any? {
     val inputName = ortSession.inputNames?.iterator()?.next()
 
-    val list = ArrayList<String>()
-    File(input).forEachLine { list.add(it) }
-    val _list = list.toTypedArray()
+    val inputTensor = OnnxTensor.createTensor(ortEnvironment,arrayOf(input).toString())
 
-    val inputTensor = OnnxTensor.createTensor( ortEnvironment , _list , longArrayOf( 1, 1 ) )
+    val results = ortSession.run(mapOf(inputName to inputTensor))
 
-    val results = ortSession.run( mapOf( inputName to inputTensor ) )
-
-    val output = results[0].value as Array<FloatArray>
-    return output[0][0]
+    val output = results[0].value
+    return output
 }

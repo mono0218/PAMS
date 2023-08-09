@@ -33,6 +33,7 @@ import com.monodev.pams.R
 @Preview
 @Composable
 fun MainMenu(){
+    
     Row(
         modifier = Modifier
             .padding(20.dp)
@@ -41,7 +42,7 @@ fun MainMenu(){
         horizontalArrangement = Arrangement.SpaceBetween
     ){
 
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = {}) {
             Icon(
                 painter = rememberVectorPainter(image = Icons.Default.Notifications),
                 contentDescription = null,
@@ -80,13 +81,12 @@ fun MainMenu(){
             onCheckedChange = { checked = it })
     }
 }
-
 @Composable
-fun SettingsMenu(){
+fun SettingsMenuComponent(){
 
 }
 
 @Composable
-fun NotificationMenu(){
+fun NotificationMenuComponent(){
 
 }
