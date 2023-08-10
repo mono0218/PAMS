@@ -2,21 +2,36 @@ package com.monodev.pams
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
-import android.content.res.AssetManager
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.navigation.NavHost
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.monodev.pams.Foreground.ForegroundService
 import com.monodev.pams.component.MainMenu
+import com.monodev.pams.component.NotificationMenuComponent
+import com.monodev.pams.component.SettingsMenuComponent
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContent{
-            MainMenu()
+        setContent {
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = "Home") {
+                composable(route = "Home") {
+                    MainMenu(navController)
+                }
+                composable(route = "Notification") {
+                    NotificationMenuComponent(navController)
+                }
+                composable(route = "Settings") {
+                    SettingsMenuComponent(navController)
+                }
+            }
         }
 
         val intent = Intent(this, ForegroundService::class.java)
