@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'kotlin-android'
+    id 'com.google.devtools.ksp'
 }
 
 android {
@@ -58,6 +60,8 @@ dependencies {
     // Android Studio Preview support
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation 'androidx.navigation:navigation-runtime-ktx:2.6.0'
+    implementation 'androidx.room:room-common:2.5.2'
+    implementation 'androidx.room:room-ktx:2.5.2'
     debugImplementation("androidx.compose.ui:ui-tooling")
 
     // UI Tests
@@ -82,5 +86,7 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
     implementation 'com.microsoft.onnxruntime:onnxruntime-android:latest.release'
-    implementation("androidx.navigation:navigation-compose")
+    implementation"androidx.navigation:navigation-compose"
+    implementation "androidx.room:room-runtime"
+    ksp "androidx.room:room-compiler:2.5.2"
 }

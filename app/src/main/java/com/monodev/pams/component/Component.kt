@@ -42,6 +42,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.monodev.pams.API.Classtification.Companion.dao
 import com.monodev.pams.R
 
 
@@ -137,10 +138,6 @@ fun NotificationMenuComponent(navController: NavHostController) {
             modifier= Modifier
                 .padding(top = 10.dp,bottom=10.dp,start = 15.dp, end = 15.dp)
         ) {
-            NotificationCard()
-            NotificationCard()
-            NotificationCard()
-            NotificationCard()
         }
     }
 }
@@ -173,10 +170,10 @@ fun NotificationCard() {
             )
 
             Text(
-                text = "インストールありがとうございます\n以下のボタンから使い方ガイドをご覧いただけます。",
+                text = "インストールありがとうございます以下のボタンから使い方ガイドをご覧いただけます。",
                 style = TextStyle(
                     fontSize = 15.sp,
-                    lineHeight = 20.sp,
+                    lineHeight = 30.sp,
                     fontWeight = FontWeight(400),
                     color = Color(0xFF49454F),
                     letterSpacing = 0.25.sp,

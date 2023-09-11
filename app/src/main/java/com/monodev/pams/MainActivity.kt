@@ -10,15 +10,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.monodev.pams.API.Classtification
+import com.monodev.pams.API.Database
+import com.monodev.pams.API.Sql
 import com.monodev.pams.Foreground.ForegroundService
 import com.monodev.pams.component.MainMenu
 import com.monodev.pams.component.NotificationMenuComponent
 import com.monodev.pams.component.SettingsMenuComponent
 
 class MainActivity : ComponentActivity() {
+    companion object {
+        lateinit var db : Database.AppDatabase
+        lateinit var dao : Sql.UserDao
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Database.dao.insertAll(Sql.History(uid = 0, content = "test", time = "test"))
         setContent {
             val navController = rememberNavController()
             NavHost(navController = navController, startDestination = "Home") {
@@ -48,5 +55,6 @@ class MainActivity : ComponentActivity() {
             val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(mChannel)
         }
+        println(Database.dao.getAll())
     }
 }

@@ -15,7 +15,7 @@ class NotificationListener : NotificationListenerService() {
         if (!b1) {
             val text = extras.getCharSequence(Notification.EXTRA_TEXT);
             Log.i("Notification Listener", text.toString())
-            main(text.toString(),resources)
+            Classtification().main(text.toString(),resources,NotificationListener())
         }
     }
 
