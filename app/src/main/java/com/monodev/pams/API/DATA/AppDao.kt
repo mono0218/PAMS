@@ -1,4 +1,4 @@
-package com.monodev.pams.API
+package com.monodev.pams.API.DATA
 
 import androidx.room.ColumnInfo
 import androidx.room.Dao
@@ -8,7 +8,7 @@ import androidx.room.Insert
 import androidx.room.PrimaryKey
 import androidx.room.Query
 
-class Sql {
+class AppDao {
     @Entity
     data class History(
         @PrimaryKey(autoGenerate = true) val uid: Int,
