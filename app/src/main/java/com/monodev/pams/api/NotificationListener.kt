@@ -1,4 +1,4 @@
-package com.monodev.pams.API
+package com.monodev.pams.api
 
 import android.app.Notification
 import android.service.notification.NotificationListenerService
@@ -12,13 +12,9 @@ class NotificationListener : NotificationListenerService() {
         val message = sbn.groupKey
         val b1 = message.contains("com.monodev.pams")
         if (!b1) {
-            val text = extras.getCharSequence(Notification.EXTRA_TEXT);
+            val text = extras.getCharSequence(Notification.EXTRA_TEXT)
             Log.i("Notification Listener", text.toString())
             Classification().main(text.toString(),resources, this)
         }
-    }
-
-    companion object {
-        const val TAG = "PAMS_listener"
     }
 }

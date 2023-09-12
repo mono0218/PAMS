@@ -1,4 +1,4 @@
-package com.monodev.pams.API.DATA
+package com.monodev.pams.api.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Dao

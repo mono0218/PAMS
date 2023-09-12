@@ -1,9 +1,7 @@
-package com.monodev.pams.API.DATA
+package com.monodev.pams.api.data
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
@@ -15,10 +13,10 @@ class AwaitDao {
                 AppDatabase::class.java, "database-name"
             ).fallbackToDestructiveMigration().build()
             val userDao = db.userDao()
-            var users: List<AppDao.History> = listOf()
+            var users: List<AppDao.History>
             runBlocking {
                 withContext(Dispatchers.IO) {
-                    users = userDao.getAll();
+                    users = userDao.getAll()
                     println(userDao.getAll())
                 }
             }

@@ -1,4 +1,4 @@
-package com.monodev.pams.Foreground
+package com.monodev.pams.foreground
 
 import android.content.BroadcastReceiver
 import android.content.Context

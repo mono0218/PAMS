@@ -1,4 +1,4 @@
-package com.monodev.pams.API
+package com.monodev.pams.api
 
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment
@@ -6,13 +6,13 @@ import ai.onnxruntime.OrtSession
 import android.content.Context
 import android.content.res.Resources
 import androidx.room.Room
-import com.monodev.pams.API.DATA.AppDao
-import com.monodev.pams.API.DATA.AppDatabase
+import com.monodev.pams.api.data.AppDao
+import com.monodev.pams.api.data.AppDatabase
 import com.monodev.pams.R
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class Classification(){
+class Classification{
     fun main (input: String, resources: Resources, applicationContext: Context){
         val ortEnvironment = OrtEnvironment.getEnvironment()
         val ortSession = createSession(ortEnvironment,resources)
@@ -31,13 +31,10 @@ class Classification(){
             ).fallbackToDestructiveMigration().build()
 
             val userDao = db.userDao()
-            var users: List<Any>
-            val DataWoker = Thread {
+            val dataWoker = Thread {
                 userDao.insertAll(AppDao.History(uid = 0, content = input, time = time.toString()))
-                users= userDao.getAll();
             }
-            DataWoker.start()
-
+            dataWoker.start()
         }
     }
 
