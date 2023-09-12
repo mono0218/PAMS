@@ -9,16 +9,16 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 
 class AppDao {
-    @Entity
+    @Entity(tableName = "historyList")
     data class History(
         @PrimaryKey(autoGenerate = true) val uid: Int,
-        @ColumnInfo(name = "content") val content: String?,
-        @ColumnInfo(name = "time") val time: String?
+        @ColumnInfo(name = "content") val content: String,
+        @ColumnInfo(name = "time") val time: String
     )
 
     @Dao
     interface UserDao {
-        @Query("SELECT * FROM history")
+        @Query("SELECT * FROM historyList")
         fun getAll(): List<History>
 
         @Insert

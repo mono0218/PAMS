@@ -44,10 +44,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.room.Room
+import com.monodev.pams.API.DATA.AppDao
 import com.monodev.pams.API.DATA.AppDatabase
 import com.monodev.pams.API.DATA.AwaitDao
 import com.monodev.pams.R
-
 class Component{
     @Composable
     fun MainMenu(navController: NavHostController) {
@@ -121,10 +121,10 @@ class Component{
 
     @Composable
     fun NotificationMenuComponent(applicationContext: Context) {
-
-
+        val result = AwaitDao().execute(applicationContext)
         Column(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
                 .verticalScroll(rememberScrollState())
         ) {
             Text(
@@ -143,11 +143,8 @@ class Component{
                 modifier= Modifier
                     .padding(top = 10.dp,bottom=10.dp,start = 15.dp, end = 15.dp)
             ) {
-                val results = AwaitDao().executeAwait(applicationContext)
-                if (results != null){
-                    results?.forEach{ i ->NotificationCard("フィッシングメッセージを検知しました", "a","a")}
-                }else{
-
+                result.forEach { i ->
+                    NotificationCard("フィッシングメッセージを検知しました",i.content,i.time)
                 }
             }
         }

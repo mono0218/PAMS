@@ -28,14 +28,13 @@ class Classification(){
             val db = Room.databaseBuilder(
                 applicationContext,
                 AppDatabase::class.java, "database-name"
-            ).build()
+            ).fallbackToDestructiveMigration().build()
 
             val userDao = db.userDao()
             var users: List<Any>
             val DataWoker = Thread {
                 userDao.insertAll(AppDao.History(uid = 0, content = input, time = time.toString()))
                 users= userDao.getAll();
-                println(users[0])
             }
             DataWoker.start()
 
