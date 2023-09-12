@@ -9,7 +9,7 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.monodev.pams.Foreground.ForegroundService
+import com.monodev.pams.foreground.ForegroundService
 import com.monodev.pams.component.Component
 
 class MainActivity : ComponentActivity() {
@@ -42,6 +42,9 @@ class MainActivity : ComponentActivity() {
                 }
                 composable(route = "Settings") {
                     Component().SettingsMenuComponent()
+                }
+                composable(route="WebView"){
+                    Component().BlogWebView()
                 }
             }
         }

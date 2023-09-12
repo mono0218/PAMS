@@ -1,6 +1,8 @@
 package com.monodev.pams.component
 
 import android.content.Context
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -9,7 +11,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -17,8 +18,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -42,11 +43,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
-import androidx.room.Room
-import com.monodev.pams.API.DATA.AppDao
-import com.monodev.pams.API.DATA.AppDatabase
-import com.monodev.pams.API.DATA.AwaitDao
+import com.monodev.pams.api.data.AwaitDao
 import com.monodev.pams.R
 class Component{
     @Composable
@@ -81,17 +80,16 @@ class Component{
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ){
-
-                IconButton(onClick = {navController.navigate("Notification")}) {
+                IconButton(onClick = { navController.navigate("WebView") }) {
                     Icon(
-                        painter = rememberVectorPainter(image = Icons.Default.Notifications),
+                        painter = rememberVectorPainter(image = Icons.Default.Info),
                         contentDescription = null,
                     )
                 }
 
-                IconButton(onClick = { navController.navigate("Settings") }) {
+                IconButton(onClick = {navController.navigate("Notification")}) {
                     Icon(
-                        painter = rememberVectorPainter(image = Icons.Default.Settings),
+                        painter = rememberVectorPainter(image = Icons.Default.Notifications),
                         contentDescription = null,
                     )
                 }
@@ -130,14 +128,14 @@ class Component{
             Text(
                 text = "履歴",
                 style = TextStyle(
-                    fontSize = 45.sp,
+                    fontSize = 35.sp,
                     lineHeight = 52.sp,
                     fontWeight = FontWeight(400),
                     color = Color(0xFF000000),
 
                     ),
                 modifier= Modifier
-                    .padding(top = 45.dp,bottom=25.dp,start = 30.dp)
+                    .padding(top = 45.dp,bottom=25.dp,start = 20.dp)
             )
             Column(
                 modifier= Modifier
@@ -154,14 +152,13 @@ class Component{
     fun NotificationCard(title:String,content:String,time:String) {
         OutlinedCard(
             modifier = Modifier
-                .fillMaxWidth()
-                .heightIn(100.dp, 200.dp)
+                .fillMaxSize()
                 .padding(bottom = 20.dp),
             colors = CardDefaults.cardColors(
-                containerColor = Color(0xFFFFFF),
+                containerColor = Color(0xFFFFFFFF),
             ),
         ) {
-            Box(Modifier.fillMaxSize()) {
+            Column(Modifier.fillMaxSize().padding(15.dp)) {
                 Text(
                     text = title,
                     style = TextStyle(
@@ -169,10 +166,9 @@ class Component{
                         lineHeight = 20.sp,
                         fontWeight = FontWeight(500),
                         color = Color(0xFF49454F),
-                        letterSpacing = 0.1.sp,
                     ),
                     modifier = Modifier
-                        .offset(x = 15.dp, y = 12.dp)
+                        .offset(y= 5.dp)
                         .width(280.dp)
                         .height(20.dp)
                 )
@@ -180,46 +176,41 @@ class Component{
                 Text(
                     text = content,
                     style = TextStyle(
-                        fontSize = 15.sp,
+                        fontSize = 13.sp,
                         lineHeight = 30.sp,
-                        fontWeight = FontWeight(400),
-                        color = Color(0xFF49454F),
-                        letterSpacing = 0.25.sp,
                     ),
                     modifier = Modifier
-                        .offset(x = 15.dp, y = 35.dp)
+                        .offset(y = 20.dp)
                         .width(280.dp)
                         .height(80.dp)
                 )
                 Text(
                     text = time,
                     style = TextStyle(
-                        fontSize = 15.sp,
+                        fontSize = 12.sp,
                         lineHeight = 30.sp,
-                        fontWeight = FontWeight(400),
-                        color = Color(0xFF49454F),
-                        letterSpacing = 0.25.sp,
                     ),
                     modifier = Modifier
-                        .offset(x = 15.dp, y = 35.dp)
+                        .offset(y = 35.dp)
                         .width(280.dp)
-                        .height(80.dp)
-                )
-                Row(
-                    modifier= Modifier
-                        .offset(x = 0.dp, y = 128.dp)
-                        .width(370.dp)
                         .height(40.dp)
-                        .padding(start = 8.dp, end = 8.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    TextButton(onClick = { /* Do something */ }){
-                        Text("使い方を見る")
-                    }
+                )
+                TextButton(onClick = { /* Do something */ }){
+                    Text("詳細を見る")
                 }
             }
         }
+    }
+
+    @Composable
+    fun BlogWebView(){
+        AndroidView(
+            factory = ::WebView,
+            update = { webView ->
+                webView.webViewClient = WebViewClient()
+                webView.loadUrl("https://blog.monodev.cloud")
+            }
+        )
     }
 }
 

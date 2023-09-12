@@ -10,14 +10,14 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/pams_icon_background"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/pams_icon_background"
         android:supportsRtl="true"
         android:theme="@style/Theme.PAMS"
         tools:targetApi="31">
 
-        <service android:name="com.monodev.pams.API.NotificationListener"
+        <service android:name="com.monodev.pams.api.NotificationListener"
             android:label="My Notification Listener"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
             android:exported="true">
@@ -39,12 +39,12 @@
         </activity>
 
         <service
-            android:name="com.monodev.pams.Foreground.ForegroundService"
+            android:name="com.monodev.pams.foreground.ForegroundService"
             android:enabled="true"
             android:exported="true" />
 
         <receiver
-            android:name="com.monodev.pams.Foreground.ForegroundReceiver"
+            android:name="com.monodev.pams.foreground.ForegroundReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.myapplication" />
