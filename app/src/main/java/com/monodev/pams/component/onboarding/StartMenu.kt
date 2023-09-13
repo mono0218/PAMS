@@ -1,6 +1,5 @@
 package com.monodev.pams.component.onboarding
 
-import android.content.Context
 import android.content.Intent
 import android.provider.Settings
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -26,19 +25,27 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.getString
 import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavHostController
 import com.monodev.pams.BuildConfig
+import com.monodev.pams.MainActivity
 import com.monodev.pams.R
+
+import android.content.Context
+import com.monodev.pams.api.data.DataStoreManager
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class StartMenu() {
 
     @OptIn(ExperimentalFoundationApi::class)
     @Composable
-    fun test(navController: NavHostController,applicationContext: Context) {
+    fun test(navController: NavHostController, applicationContext: MainActivity) {
         val pagerState = rememberPagerState{5}
         val scope = rememberCoroutineScope()
+        val dataStoreManager = DataStoreManager(applicationContext)
 
         data class ScreenList(val viewName:String, val img: Int, val comment:String, val flag:Boolean)
 
@@ -91,8 +98,9 @@ class StartMenu() {
                         )
 
                         Button(onClick = {
-                            val intent1 = Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")
-                            intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            val _intent = Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")
+                            _intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(applicationContext,_intent,null)
                         }) {
                             Text(text = "設定へ行く")
                         }
@@ -111,12 +119,11 @@ class StartMenu() {
                         )
 
                         Button(onClick = {
-                            val intent = Intent()
-                            intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                            val _intent = Intent()
+                            _intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                                 .putExtra("android.provider.extra.APP_PACKAGE", BuildConfig.APPLICATION_ID)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            val bundle =null
-                            startActivity(applicationContext,intent,);
+                            _intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(applicationContext,_intent,null);
                         }) {
                             Text(text = "設定へ行く")
                         }
@@ -140,6 +147,9 @@ class StartMenu() {
                     Button(onClick = {
                         println(pagerState.currentPage)
                         if(pagerState.currentPage === 4){
+                            runBlocking(Dispatchers.IO) {
+                                dataStoreManager.saveConfig(1)
+                            }
                             navController.navigate("Home")
                         }else {
                             scope.launch {

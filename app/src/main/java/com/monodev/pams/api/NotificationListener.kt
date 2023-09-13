@@ -6,10 +6,10 @@ import android.service.notification.StatusBarNotification
 import android.util.Log
 
 class NotificationListener : NotificationListenerService() {
-    override fun onNotificationPosted(sbn: StatusBarNotification) {
-        super.onNotificationPosted(sbn)
-        val extras = sbn.notification.extras
-        val message = sbn.groupKey
+    override fun onNotificationPosted(notification: StatusBarNotification) {
+        super.onNotificationPosted(notification)
+        val extras = notification.notification.extras
+        val message = notification.groupKey
         val b1 = message.contains("com.monodev.pams")
         if (!b1) {
             val text = extras.getCharSequence(Notification.EXTRA_TEXT)
