@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.monodev.pams.foreground.ForegroundService
 import com.monodev.pams.component.Component
+import com.monodev.pams.component.onboarding.StartMenu
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,15 +34,16 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = "Home") {
+            NavHost(navController = navController, startDestination = "InitMenu") {
+                composable(route="InitMenu"){
+                    StartMenu().test(navController,applicationContext)
+                }
+
                 composable(route = "Home") {
                     Component().MainMenu(navController)
                 }
                 composable(route = "Notification") {
                     Component().NotificationMenuComponent(applicationContext)
-                }
-                composable(route = "Settings") {
-                    Component().SettingsMenuComponent()
                 }
                 composable(route="WebView"){
                     Component().BlogWebView()

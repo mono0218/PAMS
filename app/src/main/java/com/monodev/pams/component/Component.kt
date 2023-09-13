@@ -98,26 +98,6 @@ class Component{
     }
 
     @Composable
-    fun SettingsMenuComponent() {
-        Column(
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(
-                text = "設定",
-                style = TextStyle(
-                    fontSize = 45.sp,
-                    lineHeight = 52.sp,
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFF000000),
-
-                    ),
-                modifier= Modifier
-                    .padding(top = 45.dp,bottom=25.dp,start = 30.dp)
-            )
-        }
-    }
-
-    @Composable
     fun NotificationMenuComponent(applicationContext: Context) {
         val result = AwaitDao().execute(applicationContext)
         Column(
