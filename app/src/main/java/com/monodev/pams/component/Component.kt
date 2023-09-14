@@ -66,11 +66,6 @@ class Component{
                         .size(250.dp)
                         .padding(bottom = 0.dp)
                 )
-
-                Switch(
-                    modifier = Modifier.semantics { contentDescription = "Demo" },
-                    checked = checked,
-                    onCheckedChange = { checked = it })
             }
 
             Row(
@@ -143,18 +138,16 @@ class Component{
                     text = title,
                     style = TextStyle(
                         fontSize = 15.sp,
-                        lineHeight = 20.sp,
-                        fontWeight = FontWeight(500),
+                        fontWeight = FontWeight.Bold,
                         color = Color(0xFF49454F),
                     ),
                     modifier = Modifier
-                        .offset(y= 5.dp)
                         .width(280.dp)
                         .height(20.dp)
                 )
 
                 Text(
-                    text = content,
+                    text = "通知内容：${content}",
                     style = TextStyle(
                         fontSize = 13.sp,
                         lineHeight = 30.sp,
@@ -165,19 +158,17 @@ class Component{
                         .height(80.dp)
                 )
                 Text(
-                    text = time,
+                    text = "日時：${time}",
                     style = TextStyle(
                         fontSize = 12.sp,
                         lineHeight = 30.sp,
                     ),
                     modifier = Modifier
+                        .padding(bottom = 20.dp)
                         .offset(y = 35.dp)
                         .width(280.dp)
                         .height(40.dp)
                 )
-                TextButton(onClick = { /* Do something */ }){
-                    Text("詳細を見る")
-                }
             }
         }
     }

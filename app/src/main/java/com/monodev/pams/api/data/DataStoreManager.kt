@@ -14,9 +14,8 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 
 class DataStoreManager(private val context: Context) {
-    val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "config")
-
     companion object {
+        val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "config")
         val ISSETUP = intPreferencesKey("isSetup")
     }
 
