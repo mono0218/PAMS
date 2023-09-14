@@ -27,7 +27,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.monodev.pams.MainActivity
 import com.monodev.pams.R
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
@@ -42,17 +41,18 @@ import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
 import coil.request.ImageRequest
 import com.monodev.pams.BuildConfig
+import com.monodev.pams.MainActivity
 import com.monodev.pams.api.data.DataStoreManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-class StartMenu() {
-    data class ScreenList(val viewName:String, val img: Int, val comment:String,)
+class StartMenu {
+    data class ScreenList(val viewName:String, val img: Int, val comment:String)
     @OptIn(ExperimentalFoundationApi::class)
     @Composable
     fun test(navController: NavHostController, applicationContext: MainActivity) {
-        val pagerState = rememberPagerState{5}
+        val pagerState = rememberPagerState{6}
         val scope = rememberCoroutineScope()
 
 
@@ -63,6 +63,7 @@ class StartMenu() {
             ScreenList("通知受信設定",R.raw.step1,"動画のように設定をお願いします"),
             ScreenList("通知設定",R.raw.step2,"動画のように設定をお願いします"),
             ScreenList("設定完了",R.drawable.pams_01,""),
+            ScreenList("使い方",R.drawable.img,"")
         )
 
         HorizontalPager(state = pagerState) {page ->
@@ -72,6 +73,7 @@ class StartMenu() {
                 2 -> Screen2(data = list[2], pagerState = pagerState, navController = navController, scope = scope, applicationContext = applicationContext, pName = Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
                 3 -> Screen2(data = list[3], pagerState = pagerState, navController = navController, scope = scope, applicationContext = applicationContext, pName = Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                 4 -> Screen3(data = list[4], pagerState = pagerState, navController = navController, scope = scope, applicationContext = applicationContext)
+                5 -> Screen4(data = list[5], pagerState = pagerState, navController = navController, scope = scope, applicationContext = applicationContext)
             }
         }
     }
@@ -80,7 +82,7 @@ class StartMenu() {
     @Composable
     fun Screen1(data: ScreenList, pagerState: PagerState, navController:NavHostController, scope: CoroutineScope, applicationContext: MainActivity){
         val dataStoreManager = DataStoreManager(applicationContext)
-        Box(){
+        Box{
             Column(Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
@@ -117,9 +119,11 @@ class StartMenu() {
 
     @OptIn(ExperimentalFoundationApi::class)
     @Composable
-    fun Screen2(data: ScreenList, pagerState: PagerState, navController:NavHostController, scope: CoroutineScope, applicationContext: MainActivity,pName:String){
+    fun Screen2(
+        data: ScreenList, pagerState: PagerState, navController:NavHostController, scope: CoroutineScope, applicationContext: MainActivity,
+        pName:String){
         val dataStoreManager = DataStoreManager(applicationContext)
-        Box(){
+        Box{
             Column(Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
@@ -139,10 +143,10 @@ class StartMenu() {
                 )
 
                 Button(onClick = {
-                    val _intent = Intent(pName)
+                    val intent1 = Intent(pName)
                         .putExtra("android.provider.extra.APP_PACKAGE", BuildConfig.APPLICATION_ID)
-                    _intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    ContextCompat.startActivity(applicationContext, _intent, null)
+                    intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    ContextCompat.startActivity(applicationContext, intent1, null)
                 }) {
                     Text(text = "設定へ行く")
                 }
@@ -211,10 +215,47 @@ class StartMenu() {
             Screen1(data = data, pagerState = pagerState, navController = navController, scope = scope, applicationContext = applicationContext)
         }
     }
+    @Composable
+    @OptIn(ExperimentalFoundationApi::class)
+    fun Screen4(data: ScreenList, pagerState: PagerState, navController:NavHostController, scope: CoroutineScope, applicationContext: MainActivity){
+        val dataStoreManager = DataStoreManager(applicationContext)
+        Box{
+            Column(Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ){
+                Text(modifier=Modifier.padding(bottom = 25.dp), text =data.viewName,style = TextStyle(
+                    fontSize = 35.sp,
+                    lineHeight = 32.sp,
+                    fontWeight = FontWeight(400),
+                    textAlign = TextAlign.Center)
+                )
+                Image(
+                    modifier = Modifier.padding(bottom = 50.dp).size(550.dp),
+                    painter = painterResource(id = data.img),
+                    contentDescription = null,
+                )
+            }
+
+            OnboardingControlloer(
+                scope = scope,
+                pagerState = pagerState,
+                navController = navController,
+                dataStoreManager = dataStoreManager,
+                applicationContext = applicationContext
+            )
+        }
+    }
 
     @OptIn(ExperimentalFoundationApi::class)
     @Composable
-    fun OnboardingControlloer(scope: CoroutineScope,pagerState: PagerState,navController: NavHostController,dataStoreManager: DataStoreManager,applicationContext: MainActivity){
+    fun OnboardingControlloer(
+        scope: CoroutineScope,
+        pagerState: PagerState,
+        navController: NavHostController,
+        dataStoreManager: DataStoreManager,
+        applicationContext: MainActivity
+    ){
         Row(modifier = Modifier
             .fillMaxSize()
             .padding(15.dp),
@@ -231,11 +272,11 @@ class StartMenu() {
 
             Button(onClick = {
                 println(pagerState.currentPage)
-                if(pagerState.currentPage === 4){
+                if(pagerState.currentPage === 5){
                     navController.navigate("Home")
+                    MainActivity().restart(applicationContext)
                     runBlocking {
                         dataStoreManager.saveConfig(1)
-                        val result = DataStoreManager(applicationContext).observeConfig()
                     }
                 }else {
                     scope.launch {

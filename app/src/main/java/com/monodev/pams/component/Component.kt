@@ -1,6 +1,6 @@
 package com.monodev.pams.component
-
 import android.content.Context
+import android.content.Intent
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.foundation.Image
@@ -26,7 +26,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,8 +36,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -47,9 +44,11 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import com.monodev.pams.api.data.AwaitDao
 import com.monodev.pams.R
+import com.monodev.pams.foreground.ForegroundService
+
 class Component{
     @Composable
-    fun MainMenu(navController: NavHostController) {
+    fun MainMenu(navController: NavHostController, applicationContext: Context) {
         Box(modifier= Modifier.fillMaxSize()){
             Column(
                 modifier = Modifier.fillMaxSize(),
@@ -58,13 +57,25 @@ class Component{
             ){
 
                 var checked by remember { mutableStateOf(true) }
-
                 Image(
                     painter = painterResource(id = R.drawable.pams_logo),
                     contentDescription = null,
                     modifier = Modifier
                         .size(250.dp)
                         .padding(bottom = 0.dp)
+                )
+                Switch(
+
+                    checked = checked,
+                    onCheckedChange = {
+                        checked = it
+                        val intent1 = Intent(applicationContext, ForegroundService::class.java)
+                        if(checked ===true){
+                            applicationContext.startForegroundService(intent1)
+                        }else{
+                            applicationContext.stopService(intent1)
+                        }
+                    }
                 )
             }
 

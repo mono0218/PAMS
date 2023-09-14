@@ -26,15 +26,17 @@ class ForegroundService: Service(){
             channelId, channelName,
             NotificationManager.IMPORTANCE_DEFAULT
         )
+        channel.description = "フォアグラウンドで常時起動するために使用します"
 
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         manager.createNotificationChannel(channel)
 
         val notification = NotificationCompat.Builder(this, CHANNEL_ID )
-            .setSmallIcon(R.drawable.pams_icon_background)
+            .setSmallIcon(R.drawable.logo)
             .setContentTitle("PAMS動作中")
             .setContentText("フィッシング防止機能が動作しています")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setAutoCancel(false)
             .build()
 
         startForeground(2222, notification)

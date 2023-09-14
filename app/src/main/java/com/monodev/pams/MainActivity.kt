@@ -2,6 +2,7 @@ package com.monodev.pams
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -24,54 +25,67 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val packagecontext = this
 
-        var Startdest = ""
-        var result = 0
+        val fromNotification = intent.getBooleanExtra("fromNotification", false)
+        if(fromNotification === true){
+            setContent {
+                Component().NotificationMenuComponent(applicationContext)
+            }
+        }else{
+            val packagecontext = this
 
-        val intent1 = Intent(this, ForegroundService::class.java)
-        startForegroundService(intent1)
+            var startDest = String()
+            var result = 0
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Create the NotificationChannel
-            val name = "PAMS"
-            val descriptionText = "PAMS"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val mChannel = NotificationChannel("default", name, importance)
-            mChannel.description = descriptionText
+            val intent1 = Intent(this, ForegroundService::class.java)
+            startForegroundService(intent1)
 
-            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(mChannel)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                // Create the NotificationChannel
+                val name = "PAMS"
+                val descriptionText = "PAMSが警告通知を出す際に使用します"
+                val importance = NotificationManager.IMPORTANCE_HIGH
+                val mChannel = NotificationChannel("default", name, importance)
+                mChannel.description = descriptionText
 
-        }
+                val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+                notificationManager.createNotificationChannel(mChannel)
 
-        runBlocking {
-            val data = DataStoreManager(applicationContext).observeConfig()
-            result = data.first()!!
-        }
-        Startdest = if(result === 1){{/* TODO */}
-            "Home"
-        } else {
-            "InitMenu"
-        }
+            }
 
-        setContent {
-            val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = Startdest) {
-                composable(route = "InitMenu") {
-                    StartMenu().test(navController, packagecontext)
-                }
+            runBlocking {
+                val data = DataStoreManager(applicationContext).observeConfig()
+                result = data.first()!!
+            }
+            startDest = if(result === 1){
+                "Home"
+            } else {
+                "InitMenu"
+            }
 
-                composable(route = "Home") {
-                    Component().MainMenu(navController)
-                }
-                composable(route = "Notification") {
-                    Component().NotificationMenuComponent(applicationContext)
-                }
-                composable(route = "WebView") {
-                    Component().BlogWebView()
+            setContent {
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = startDest) {
+                    composable(route = "InitMenu") {
+                        StartMenu().test(navController, packagecontext)
+                    }
+
+                    composable(route = "Home") {
+                        Component().MainMenu(navController,applicationContext)
+                    }
+                    composable(route = "Notification") {
+                        Component().NotificationMenuComponent(applicationContext)
+                    }
+                    composable(route = "WebView") {
+                        Component().BlogWebView()
+                    }
                 }
             }
         }
+    }
+    fun restart(restartcontext:Context){
+        val intent1 = Intent(restartcontext, ForegroundService::class.java)
+        restartcontext.stopService(intent1)
+        restartcontext.startForegroundService(intent1)
     }
 }

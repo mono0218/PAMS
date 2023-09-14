@@ -2,7 +2,6 @@ package com.monodev.pams.api.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.stringPreferencesKey
 import java.io.IOException
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -29,7 +28,7 @@ class DataStoreManager(private val context: Context) {
         }
     }
 
-    public fun observeConfig(): Flow<Int?> {
+    fun observeConfig(): Flow<Int?> {
         return context.dataStore.data
             .catch { exception ->
                 if (exception is IOException) {
