@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/pams_icon_background"
+        android:icon="@mipmap/pams_icon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/pams_icon_background"
+        android:roundIcon="@mipmap/pams_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.PAMS"
         tools:targetApi="31">
